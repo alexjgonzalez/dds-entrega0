@@ -3,18 +3,17 @@ package dds.entrega0.operaciones;
 import java.util.ArrayList;
 import java.util.List;
 
+import dds.entrega0.documentos.DocumentoComercial;
+import dds.entrega0.items.Item;
 import dds.entrega0.operaciones.Estado;
-import dds.entrega0.operaciones.Item;
 
-public class Egreso {
+public abstract class Egreso {
 	
 	private Estado estado = Estado.ABIERTO;
 	
 	private List<Item> items = new ArrayList<Item>();
-
-	public Egreso() {
-		// TODO Auto-generated constructor stub
-	}
+	
+	private DocumentoComercial documentoComercial;
 	
 	public Estado getEstado() {
 		return estado;
@@ -24,5 +23,17 @@ public class Egreso {
 		items.add(unItem);
 	}
 	
+	public void cerrarOperacion() {
+		this.estado = Estado.CERRADO;
+	}
 
+	public DocumentoComercial getDocumentoComercial() {
+		return documentoComercial;
+	}
+
+	public void setDocumentoComercial(DocumentoComercial documentoComercial) {
+		this.documentoComercial = documentoComercial;
+	}
+	
+	
 }
