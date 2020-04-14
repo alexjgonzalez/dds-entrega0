@@ -7,6 +7,11 @@ public abstract class DocumentoComercial {
 	LocalDate fecha;
 	String detalle;
 	
+	public DocumentoComercial(LocalDate fecha, String detalles) {
+		this.fecha = fecha;
+		this.detalle = detalles;
+	}
+	
 	public LocalDate getFecha() {
 		return fecha;
 	}
