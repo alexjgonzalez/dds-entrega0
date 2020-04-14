@@ -1,14 +1,8 @@
 package dds.entrega0.items;
 
-public class Articulo implements Item {
+public class Articulo extends Item {
 
-	public Articulo() {
-		// TODO Auto-generated constructor stub
+	public Articulo(String nombre, int precio) {
+		super(nombre, precio);
 	}
-
-	public int precio() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }
