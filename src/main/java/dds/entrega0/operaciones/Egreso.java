@@ -34,6 +34,5 @@ public abstract class Egreso {
 	public void setDocumentoComercial(DocumentoComercial documentoComercial) {
 		this.documentoComercial = documentoComercial;
 	}
-	
-	
+
 }
