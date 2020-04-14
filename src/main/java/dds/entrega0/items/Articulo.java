@@ -1,4 +1,4 @@
-package dds.entrega0.operaciones;
+package dds.entrega0.items;
 
 public class Articulo implements Item {
 
