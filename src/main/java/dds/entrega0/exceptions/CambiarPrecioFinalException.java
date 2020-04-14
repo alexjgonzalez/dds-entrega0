@@ -1,4 +1,4 @@
-package dds.exceptions;
+package dds.entrega0.exceptions;
 
 @SuppressWarnings("serial")
 public class CambiarPrecioFinalException extends RuntimeException {
