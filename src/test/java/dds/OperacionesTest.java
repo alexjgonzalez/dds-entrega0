@@ -76,21 +76,6 @@ public class OperacionesTest {
 			}
 	}
 	
-	@Test
-	public void testCambioPrecioCompraCerrada() {
-		
-		try {
-			compraArticulos.cerrarOperacion();
-			lavandina.actualizarPrecio(200);
-			Assert.assertEquals(400, compraArticulos.compraTotal());
-			Assert.fail("Error");
-			}
-			catch(CambiarPrecioFinalException excepcion) {
-				String message = "La operacion de Compra está Cerrada. No se puede cambiar el Precio";
-				Assert.assertEquals(message, excepcion.getMessage());
-			}
-	}
-	
-	
+
 
 }
