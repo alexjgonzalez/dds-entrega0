@@ -19,7 +19,7 @@ public abstract class Egreso {
 		return estado;
 	}
 	
-	public void addItem(Item unItem) {
+	public void agregarItem(Item unItem) {
 		items.add(unItem);
 	}
 	
