@@ -6,9 +6,6 @@ public class Compra extends Egreso {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-
-	
 	public void generarRemito() {
 		
 	}

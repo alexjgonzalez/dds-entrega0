@@ -24,7 +24,13 @@ public abstract class Egreso {
 	}
 	
 	public void cerrarOperacion() {
+		items.forEach(unItem -> unItem.cerrarPrecio());
 		this.estado = Estado.CERRADO;
+	}
+	
+	public int compraTotal() {
+		//return items.stream().map(unItem -> unItem.precio()).sum();
+		return items.stream().mapToInt(unItem -> unItem.precio()).sum();
 	}
 
 	public DocumentoComercial getDocumentoComercial() {
