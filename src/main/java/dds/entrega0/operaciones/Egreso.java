@@ -32,6 +32,10 @@ public abstract class Egreso {
 		//return items.stream().map(unItem -> unItem.precio()).sum();
 		return items.stream().mapToInt(unItem -> unItem.precio()).sum();
 	}
+	
+	public boolean solicitaRemito() {
+		return items.stream().allMatch(unItem -> unItem.requiereRemito());
+	}
 
 	public DocumentoComercial getDocumentoComercial() {
 		return documentoComercial;
