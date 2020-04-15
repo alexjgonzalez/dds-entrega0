@@ -1,6 +1,9 @@
 package dds;
 
 import org.junit.Test;
+
+import java.time.LocalDate;
+
 import org.junit.Assert;
 import org.junit.Before;
 
@@ -70,12 +73,30 @@ public class OperacionesTest {
 			Assert.assertEquals(400, compraArticulos.compraTotal());
 			Assert.fail("Error");
 			}
-			catch(CambiarPrecioFinalException excepcion) {
-				String message = "La operacion de Compra está Cerrada. No se puede cambiar el Precio";
-				Assert.assertEquals(message, excepcion.getMessage());
-			}
+		catch(CambiarPrecioFinalException excepcion) {
+			String message = "La operacion de Compra está Cerrada. No se puede cambiar el Precio";
+			Assert.assertEquals(message, excepcion.getMessage());
+		}
 	}
 	
+	@Test
+	public void testGenerarRemito() {
+		compraArticulos.generarRemito(LocalDate.now() , "Compra articulos Limpieza", compraArticulos.compraTotal(), 10);
+		Assert.assertEquals("R", compraArticulos.getDocumentoComercial().getNomenclador());
+	}
+	
+	@Test
+	public void testGenerarRemitoServicio() {
+		
+		try {
+			compraArticulosServicios.generarRemito(LocalDate.now() , "Compra Articulos y Servicios", compraArticulosServicios.compraTotal(), 10);
+			Assert.assertEquals("R", compraArticulosServicios.getDocumentoComercial().getNomenclador());
+			Assert.fail("Error");
+			}
+		catch(NullPointerException excepcion) {
 
+		}
+
+	}
 
 }
