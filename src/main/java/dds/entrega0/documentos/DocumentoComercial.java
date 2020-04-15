@@ -6,10 +6,13 @@ public abstract class DocumentoComercial {
 
 	LocalDate fecha;
 	String detalle;
+	int precio;
+	String nomenclador = "X";
 	
-	public DocumentoComercial(LocalDate fecha, String detalles) {
+	public DocumentoComercial(LocalDate fecha, String detalles, int precio) {
 		this.fecha = fecha;
 		this.detalle = detalles;
+		this.precio = precio;
 	}
 	
 	public LocalDate getFecha() {
@@ -27,6 +30,14 @@ public abstract class DocumentoComercial {
 	
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
+	}
+	
+	public void setNomenclador(String nomenclador) {
+		this.nomenclador = nomenclador;
+	}
+	
+	public String getNomenclador() {
+		return this.nomenclador;
 	}
 	
 }
