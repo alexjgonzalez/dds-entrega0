@@ -23,6 +23,10 @@ public abstract class Item {
 	public void cerrarPrecio() {
 		precioTipo = new PrecioFinal();
 	}
+	
+	public boolean requiereRemito() {
+		return true;
+	}
 
 
 }
